@@ -1,0 +1,18 @@
+{
+  "checkpoint": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_a_yolo11s_640/weights/best.pt",
+  "box_precision": 0.7754952779473248,
+  "box_recall": 0.6729222520107239,
+  "box_map50": 0.7363946656217409,
+  "box_map50_95": 0.4661610471302174,
+  "mask_precision": 0.7761956809234886,
+  "mask_recall": 0.6621983914209115,
+  "mask_map50": 0.7238850133092135,
+  "mask_map50_95": 0.4012571661839573,
+  "speed": {
+    "preprocess": 1.4414864879738873,
+    "inference": 13.956036419248326,
+    "loss": 0.001288271475781541,
+    "postprocess": 1.656870243989777
+  },
+  "save_dir": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_a_clean_val"
+}

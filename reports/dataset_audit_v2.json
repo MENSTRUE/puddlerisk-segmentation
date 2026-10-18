@@ -1,0 +1,9 @@
+{
+  "train_images": 1182,
+  "provided_valid_images": 293,
+  "clean_valid_images": 291,
+  "excluded_valid_images": 2,
+  "exact_cross_split_duplicates": 1,
+  "empty_train": 19,
+  "empty_valid": 5
+}

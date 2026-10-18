@@ -1,0 +1,98 @@
+{
+  "project": "PuddleRisk v2",
+  "portfolio_progress": "10%",
+  "validated_task": "puddle surface instance segmentation",
+  "evaluation_split": "same cleaned 291-image validation split as v1",
+  "dataset": {
+    "train_images": 1182,
+    "provided_valid_images": 293,
+    "clean_valid_images": 291,
+    "test_images": 0
+  },
+  "v1_baseline": {
+    "model": "YOLO11n-seg @416",
+    "box_precision": 0.735298693123812,
+    "box_recall": 0.6890080428954424,
+    "box_map50": 0.7535143542106568,
+    "box_map50_95": 0.4742265735857523,
+    "mask_precision": 0.7190201492708567,
+    "mask_recall": 0.6997319034852547,
+    "mask_map50": 0.7255760763585029,
+    "mask_map50_95": 0.4039297878308871
+  },
+  "v2_stage_a": {
+    "checkpoint": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_a_yolo11s_640/weights/best.pt",
+    "box_precision": 0.7754952779473248,
+    "box_recall": 0.6729222520107239,
+    "box_map50": 0.7363946656217409,
+    "box_map50_95": 0.4661610471302174,
+    "mask_precision": 0.7761956809234886,
+    "mask_recall": 0.6621983914209115,
+    "mask_map50": 0.7238850133092135,
+    "mask_map50_95": 0.4012571661839573,
+    "speed": {
+      "preprocess": 1.4414864879738873,
+      "inference": 13.956036419248326,
+      "loss": 0.001288271475781541,
+      "postprocess": 1.656870243989777
+    },
+    "save_dir": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_a_clean_val"
+  },
+  "v2_stage_b": {
+    "checkpoint": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_b_refine/weights/best.pt",
+    "box_precision": 0.7610033018502459,
+    "box_recall": 0.7050938337801609,
+    "box_map50": 0.7333168565327688,
+    "box_map50_95": 0.46950963131109613,
+    "mask_precision": 0.7645752940278557,
+    "mask_recall": 0.6943699731903485,
+    "mask_map50": 0.7248195220613087,
+    "mask_map50_95": 0.4088462879097384,
+    "speed": {
+      "preprocess": 1.459375233680413,
+      "inference": 13.912103013749135,
+      "loss": 0.0016157972482169092,
+      "postprocess": 1.7909003676997843
+    },
+    "save_dir": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_b_clean_val"
+  },
+  "champion": {
+    "stage": "stage_b",
+    "checkpoint": "/kaggle/working/puddlerisk_10pct_v2/models/puddlerisk_v2_champion.pt",
+    "metrics": {
+      "checkpoint": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_b_refine/weights/best.pt",
+      "box_precision": 0.7610033018502459,
+      "box_recall": 0.7050938337801609,
+      "box_map50": 0.7333168565327688,
+      "box_map50_95": 0.46950963131109613,
+      "mask_precision": 0.7645752940278557,
+      "mask_recall": 0.6943699731903485,
+      "mask_map50": 0.7248195220613087,
+      "mask_map50_95": 0.4088462879097384,
+      "speed": {
+        "preprocess": 1.459375233680413,
+        "inference": 13.912103013749135,
+        "loss": 0.0016157972482169092,
+        "postprocess": 1.7909003676997843
+      },
+      "save_dir": "/kaggle/working/puddlerisk_10pct_v2/runs/stage_b_clean_val"
+    },
+    "mask_map50_95_absolute_gain_vs_v1": 0.004916500078851305,
+    "mask_map50_95_relative_gain_pct_vs_v1": 1.2171669995553016
+  },
+  "tta_diagnostic": {
+    "mask_precision": 0.7645752940278557,
+    "mask_recall": 0.6943699731903485,
+    "mask_map50": 0.7248195220613087,
+    "mask_map50_95": 0.4088462879097384
+  },
+  "claim_limits": [
+    "No independent test split is available",
+    "No puddle depth estimation",
+    "No flood severity estimation",
+    "No hydroplaning probability",
+    "No physical road-risk score",
+    "No geospatial risk map",
+    "Mask coverage is only an image-area proxy"
+  ]
+}
